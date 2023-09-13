@@ -1,0 +1,162 @@
+db.createCollection("Ingredientes");
+db.Ingredientes.insertMany([
+  {
+    nombre: "Pan",
+    descripcion: "Pan de hamburguesa clásico",
+    precio: 2.5,
+    stock: 500,
+  },
+  {
+    nombre: "Carne de res",
+    descripcion: "Carne de res jugosa y sabrosa",
+    precio: 8,
+    stock: 300,
+  },
+  {
+    nombre: "Queso cheddar",
+    descripcion: "Queso cheddar derretido",
+    precio: 1.5,
+    stock: 200,
+  },
+]);
+
+db.createCollection("Categorias");
+db.Categorias.insertMany([
+  {
+    nombre: "Clásica",
+    descripcion: "Hamburguesas clásicas y sabrosas",
+  },
+  {
+    nombre: "Vegetariana",
+    descripcion: "Hamburguesas sin carne, perfectas para vegetarianos",
+  },
+  {
+    nombre: "Gourmet",
+    descripcion: "Hamburguesas gourmet con ingredientes premium",
+  },
+]);
+
+db.createCollection("Hamburguesas");
+db.Hamburguesas.insertMany([
+  {
+    nombre: "Clásica",
+    categoria: "Clásica",
+    ingredientes: [
+      "Pan",
+      "Carne de res",
+      "Queso cheddar",
+      "Lechuga",
+      "Tomate",
+      "Cebolla",
+      "Mayonesa",
+      "Ketchup",
+    ],
+    precio: 10,
+    chef: "ChefA",
+  },
+  {
+    nombre: "Vegetariana",
+    categoria: "Vegetariana",
+    ingredientes: [
+      "Pan integral",
+      "Hamburguesa de lentejas",
+      "Queso suizo",
+      "Espinacas",
+      "Cebolla morada",
+      "Aguacate",
+      "Mayonesa vegana",
+    ],
+    precio: 8,
+    chef: "ChefB",
+  },
+  {
+    nombre: "Doble Carne",
+    categoria: "Gourmet",
+    ingredientes: [
+      "Pan de sésamo",
+      "Doble carne de res",
+      "Queso cheddar",
+      "Bacon",
+      "Lechuga",
+      "Cebolla caramelizada",
+      "Salsa BBQ",
+    ],
+    precio: 12,
+    chef: "ChefC",
+  },
+]);
+
+db.createCollection("Chefs");
+db.Chefs.insertMany([
+  {
+    nombre: "ChefA",
+    especialidad: "Carnes",
+  },
+  {
+    nombre: "ChefB",
+    especialidad: "Cocina Vegetariana",
+  },
+  {
+    nombre: "ChefC",
+    especialidad: "Gourmet",
+  },
+]);
+
+db.Ingredientes.find({ stock: { $lt: 400 } });
+
+db.Chefs.find({ especialidad: "Carnes" });
+
+db.Categorias.find();
+
+db.Ingredientes.find();
+db.Ingredientes.updateMany({}, { $mul: { precio: 1.5 } });
+
+db.Ingredientes.insertOne({
+  nombre: "Prueba1",
+  descripcion: "clásico",
+  precio: 2.5,
+  stock: 0,
+});
+
+db.Ingredientes.deleteMany({ stock: 0 });
+
+db.Hamburguesas.updateOne(
+  { nombre: "Clásica" },
+  { $push: { ingredientes: "Piña" } }
+);
+
+db.Chefs.updateOne(
+  { nombre: "ChefC" },
+  { $set: { especialidad: "Cocina Internacional" } }
+);
+
+db.Ingredientes.find({}).sort({ precio: -1 }).limit(1);
+
+db.Hamburguesas.find({ ingredientes: { $ne: "Queso cheddar" } });
+
+db.Ingredientes.updateOne({ nombre: "Pan" }, { $inc: { stock: 100 } });
+
+db.Ingredientes.find({ descripcion: { $regex: /clásico/i } });
+
+db.Hamburguesas.find({ precio: { $lte: 9 } });
+
+db.Chefs.countDocuments({});
+
+db.Categorias.find({ descripcion: { $regex: /gourmet/i } });
+
+db.Hamburguesas.insertOne({
+  nombre: "test",
+  categoria: "test",
+  ingredientes: [
+    "Pan integral",
+    "Hamburguesa de lentejas",
+    "Queso suizo",
+    "Espinacas",
+  ],
+  precio: 8,
+  chef: "ChefB",
+});
+
+db.Hamburguesas.deleteMany({
+  $expr: { $lt: [{ $size: "$ingredientes" }, 5] },
+});
