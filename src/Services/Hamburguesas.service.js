@@ -69,7 +69,9 @@ export const getAllHamburguesaIntegral = async () => {
   }
 };
 
-export const updateHamburguesaIngrediente = async (nuevoIngrediente) => {
+export const updateHamburguesaIngrediente = async (
+  nuevoIngrediente = "Arepa"
+) => {
   try {
     const db = await ConectDB();
     const collection = db.collection("Hamburguesas");

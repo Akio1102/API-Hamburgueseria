@@ -1,5 +1,5 @@
 import { Router } from "express";
-import * as HamburguesaController from "../Controllers/Hamburguesas.js";
+import * as HamburguesaController from "../Controllers/";
 
 const ROUTER = Router();
 

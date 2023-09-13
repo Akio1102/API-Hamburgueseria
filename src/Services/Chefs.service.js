@@ -56,7 +56,7 @@ export const getAllChefsCount = async () => {
     return Chefs > 0
       ? {
           msg: "Chefs Encontrados",
-          data: Chefs,
+          data: `Hay un total de ${Chefs} Chefs`,
         }
       : {
           msg: "No hay Chefs",

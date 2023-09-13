@@ -144,6 +144,8 @@ db.Chefs.countDocuments({});
 
 db.Categorias.find({ descripcion: { $regex: /gourmet/i } });
 
+db.Hamburguesas.find({});
+
 db.Hamburguesas.insertOne({
   nombre: "test",
   categoria: "test",
@@ -159,4 +161,8 @@ db.Hamburguesas.insertOne({
 
 db.Hamburguesas.deleteMany({
   $expr: { $lt: [{ $size: "$ingredientes" }, 5] },
+});
+
+db.Hamburguesas.deleteMany({
+  ingredientes: { $size: { $lt: 5 } },
 });

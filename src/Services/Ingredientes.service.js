@@ -33,7 +33,6 @@ export const updateAllPrice = async () => {
     return updatePrice.modifiedCount > 0
       ? {
           msg: "Precio Aumentado a todos los Ingredientes en 1.5",
-          data: updatePrice,
         }
       : {
           msg: "No hay Ingredientes",
