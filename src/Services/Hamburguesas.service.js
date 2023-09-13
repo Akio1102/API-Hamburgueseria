@@ -68,3 +68,89 @@ export const getAllHamburguesaIntegral = async () => {
     throw new Error(`Error en el Servidor: ${error.message}`);
   }
 };
+
+export const updateHamburguesaIngrediente = async (nuevoIngrediente) => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const updateClasica = await collection.updateOne(
+      { nombre: "Clásica" },
+      { $push: { ingredientes: nuevoIngrediente } }
+    );
+
+    return updateClasica.modifiedCount > 0
+      ? {
+          msg: "Se agrego un nuevo Ingrediente a la Hamburguesa Clásica",
+        }
+      : { msg: "No hay Hamburguesas Con Pan Integral", status: 404 };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllHamburguesassinQuesoCheddar = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const allQuesoCheddar = await collection
+      .find({ ingredientes: { $ne: "Queso cheddar" } })
+      .toArray();
+
+    return allQuesoCheddar.length > 0
+      ? {
+          msg: "Hamburguesas Sin queso Cheddar Encontradas",
+          data: allQuesoCheddar,
+        }
+      : { msg: "No hay Hamburguesas Con Pan Quedo Cheddar", status: 404 };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllHamburguesasPrecioMenor = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const allHamburguesas = await collection
+      .find({ precio: { $lte: 9 } })
+      .toArray();
+
+    return allHamburguesas.length > 0
+      ? {
+          msg: "Hamburguesas Precio menor o igual a 9",
+          data: allHamburguesas,
+        }
+      : {
+          msg: "No hay Hamburguesas Con Precio menor o igual a 9",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const deleteIngretientes5 = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const allHamburguesas = await collection.deleteMany({
+      $expr: { $lt: [{ $size: "$ingredientes" }, 5] },
+    });
+
+    return allHamburguesas.deletedCount > 0
+      ? {
+          msg: "Hamburguesas con menos de 5 Ingredientes",
+          data: allHamburguesas,
+        }
+      : {
+          msg: "No hay Hamburguesas Con Precio menos de 5 Ingredientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
