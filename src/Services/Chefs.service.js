@@ -45,8 +45,6 @@ export const updateChefC = async () => {
   }
 };
 
-db.Chefs.countDocuments({});
-
 export const getAllChefsCount = async () => {
   try {
     const db = await ConectDB();

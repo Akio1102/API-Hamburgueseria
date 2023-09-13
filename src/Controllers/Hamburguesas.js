@@ -33,10 +33,10 @@ export const GetAllPanIntegral = async (req, res) => {
   }
 };
 
-export const UpdateAllIngredientes = async (req, res) => {
+export const UpdateClasica = async (req, res) => {
   try {
-    const allIntegral = await HamburguesaService.updateHamburguesaIngrediente();
-    sendSuccessResponse(res, allIntegral);
+    const updateClasica = await HamburguesaService.updateHamburguesaClasica();
+    sendSuccessResponse(res, updateClasica);
   } catch (error) {
     sendErrorResponse(res, error);
   }
@@ -44,9 +44,9 @@ export const UpdateAllIngredientes = async (req, res) => {
 
 export const GetAllSinQuesoCheddar = async (req, res) => {
   try {
-    const allIntegral =
+    const allSinCheddar =
       await HamburguesaService.getAllHamburguesassinQuesoCheddar();
-    sendSuccessResponse(res, allIntegral);
+    sendSuccessResponse(res, allSinCheddar);
   } catch (error) {
     sendErrorResponse(res, error);
   }
@@ -54,9 +54,9 @@ export const GetAllSinQuesoCheddar = async (req, res) => {
 
 export const GetAllPrecioMenor = async (req, res) => {
   try {
-    const allIntegral =
+    const allPrecioMenor =
       await HamburguesaService.getAllHamburguesasPrecioMenor();
-    sendSuccessResponse(res, allIntegral);
+    sendSuccessResponse(res, allPrecioMenor);
   } catch (error) {
     sendErrorResponse(res, error);
   }
@@ -64,8 +64,8 @@ export const GetAllPrecioMenor = async (req, res) => {
 
 export const DeleteAllIngretientes5 = async (req, res) => {
   try {
-    const allIntegral = await HamburguesaService.deleteIngretientes5();
-    sendSuccessResponse(res, allIntegral);
+    const deleteIngrediente = await HamburguesaService.deleteIngretientes5();
+    sendSuccessResponse(res, deleteIngrediente);
   } catch (error) {
     sendErrorResponse(res, error);
   }

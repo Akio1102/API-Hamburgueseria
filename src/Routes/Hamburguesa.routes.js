@@ -9,7 +9,7 @@ export default ROUTER.get(
 )
   .get("/ChefB", HamburguesaController.GetAllChefB)
   .get("/Pan-Integral", HamburguesaController.GetAllPanIntegral)
-  .put("/New-Ingrediente", HamburguesaController.UpdateAllIngredientes)
+  .put("/New-Ingrediente", HamburguesaController.UpdateClasica)
   .get("/Sin-Cheddar", HamburguesaController.GetAllSinQuesoCheddar)
   .get("/Precio-Menor", HamburguesaController.GetAllPrecioMenor)
   .delete("/Ingredientes5", HamburguesaController.DeleteAllIngretientes5);

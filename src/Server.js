@@ -1,6 +1,6 @@
 import express from "express";
 import { ENVPORT, Global } from "./Config/config.js";
-import ROUTERS from "./Routes/Hamburguesa.routes.js";
+import ROUTERS from "./Routes/Routes.js";
 
 export default class {
   constructor() {
@@ -11,7 +11,7 @@ export default class {
   }
 
   async routes() {
-    this.app.use(ROUTERS);
+    this.app.use("/api", ROUTERS);
   }
 
   run() {
