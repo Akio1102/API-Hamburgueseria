@@ -69,14 +69,14 @@ export const getAllHamburguesaIntegral = async () => {
   }
 };
 
-export const updateHamburguesaClasica = async (nuevoIngrediente = "Arepa") => {
+export const updateHamburguesaClasica = async () => {
   try {
     const db = await ConectDB();
     const collection = db.collection("Hamburguesas");
 
     const updateClasica = await collection.updateOne(
       { nombre: "Clásica" },
-      { $push: { ingredientes: nuevoIngrediente } }
+      { $push: { ingredientes: "Arepa" } }
     );
 
     return updateClasica.modifiedCount > 0
@@ -148,6 +148,163 @@ export const deleteIngretientes5 = async () => {
         }
       : {
           msg: "No hay Hamburguesas Con Precio menos de 5 Ingredientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllHamburguesasAsc = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const allHamburguesasAsc = await collection
+      .find({})
+      .sort({ precio: 1 })
+      .toArray();
+
+    return allHamburguesasAsc.length > 0
+      ? {
+          msg: "Hamburguesas listadas Ascendente según el Precio",
+          data: allHamburguesasAsc,
+        }
+      : {
+          msg: "No hay Hamburguesas",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllHamburguesasTomate_Lechuga = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const allHamburguesas = await collection
+      .find({ ingredientes: { $in: ["Tomate", "Lechuga"] } })
+      .toArray();
+
+    return allHamburguesas.length > 0
+      ? {
+          msg: `Hamburguesas con "Tomate" o "Lechuga" como Ingredientes`,
+          data: allHamburguesas,
+        }
+      : {
+          msg: "No hay Hamburguesas",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const updateHamburguesaGourmet = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const updateClasica = await collection.updateMany(
+      { categoria: "Gourmet" },
+      { $inc: { precio: 2 } }
+    );
+
+    return updateClasica.acknowledged
+      ? {
+          msg: "Se ha incrementado en $2 todas las Hamburguesas Gourmet",
+        }
+      : { msg: "No hay Hamburguesas Gourmet", status: 404 };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getHamburguesaCara = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+    const HamburguesaCara = await collection
+      .find({})
+      .sort({ precio: -1 })
+      .limit(1)
+      .toArray();
+
+    return HamburguesaCara.length > 0
+      ? {
+          msg: "La Hamburguesa más Cara encontrada",
+          data: HamburguesaCara,
+        }
+      : {
+          msg: "No hay Hamburguesas",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const updateAllHamburguesaClasica = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+
+    const updateClasica = await collection.updateMany(
+      { categoria: "Clásica" },
+      { $push: { ingredientes: "Pepinillos" } }
+    );
+
+    return updateClasica.modifiedCount
+      ? {
+          msg: `Se ha agregado "Pepinillos" en los ingredientes de las Hamburguesas Clásicas`,
+        }
+      : { msg: "No hay Hamburguesas Gourmet", status: 404 };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getHamburguesaIngredientes7 = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+    const AllHamburguesaIngredientes7 = await collection
+      .find({ ingredientes: { $size: 7 } })
+      .toArray();
+
+    return AllHamburguesaIngredientes7.length > 0
+      ? {
+          msg: "Hamburguesas con 7 Ingredientes",
+          data: AllHamburguesaIngredientes7,
+        }
+      : {
+          msg: "No hay Hamburguesas con 7 Ingredientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getIngredienteCaro = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Hamburguesas");
+    const Ingrediente = await collection
+      .find({ chef: "a" })
+      .sort({ precio: -1 })
+      .limit(1)
+      .toArray();
+
+    return Ingrediente.length > 0
+      ? {
+          msg: "El Ingrediente más Caro es el Siguiente",
+          data: Ingrediente,
+        }
+      : {
+          msg: "No hay Ingredientes",
           status: 404,
         };
   } catch (error) {

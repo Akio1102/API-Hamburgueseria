@@ -163,6 +163,30 @@ db.Hamburguesas.deleteMany({
   $expr: { $lt: [{ $size: "$ingredientes" }, 5] },
 });
 
-db.Hamburguesas.deleteMany({
-  ingredientes: { $size: { $lt: 5 } },
-});
+// Da Error
+// db.Hamburguesas.deleteMany({
+//   ingredientes: { $size: { $lt: 5 } },
+// });
+
+db.Chefs.find({});
+
+db.Chefs.insertOne({ nombre: "ChefD", especialidad: "Cocina Asiática" });
+
+db.Hamburguesas.find({}).sort({ precio: 1 });
+
+db.Ingredientes.find({ precio: { $gte: 2, $lte: 5 } });
+
+db.Ingredientes.updateOne(
+  { nombre: "Pan" },
+  { $set: { descripcion: "Pan fresco y crujiente" } }
+);
+
+db.Hamburguesas.find({ ingredientes: { $in: ["Tomate", "Lechuga"] } });
+
+db.Chefs.find({ nombre: { $ne: "ChefA" } });
+
+db.Hamburguesas.updateMany({ categoria: "Gourmet" }, { $inc: { precio: 2 } });
+
+db.Ingredientes.find().sort({ nombre: 1 });
+
+db.Hamburguesas.find({ ingredientes: { $size: 7 } });

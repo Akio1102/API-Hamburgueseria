@@ -132,3 +132,70 @@ export const getIngredienteClasico = async () => {
     throw new Error(`Error en el Servidor: ${error.message}`);
   }
 };
+
+export const getIngredientePrecio = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Ingredientes");
+    const Ingrediente2_5 = await collection
+      .find({ precio: { $gte: 2, $lte: 5 } })
+      .toArray();
+
+    return Ingrediente2_5.length > 0
+      ? {
+          msg: "El Ingrediente es Clásico",
+          data: Ingrediente2_5,
+        }
+      : {
+          msg: "No hay Ingredientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const updateOnePan = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Ingredientes");
+    const updatePan = await collection.updateMany(
+      { nombre: "Pan" },
+      { $set: { descripcion: "Pan fresco y crujiente" } }
+    );
+
+    return updatePan.acknowledged
+      ? {
+          msg: `Se ha Actualizado la descripción del “Pan” a “Pan fresco y crujiente”`,
+        }
+      : {
+          msg: "No hay Pan en los Ingredientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllIngredienteAlfabetico = async () => {
+  try {
+    const db = await ConectDB();
+    const collection = db.collection("Ingredientes");
+    const AllIngrediente = await collection
+      .find()
+      .sort({ nombre: 1 })
+      .toArray();
+
+    return AllIngrediente.length > 0
+      ? {
+          msg: "El Ingrediente en orden Alfabético",
+          data: AllIngrediente,
+        }
+      : {
+          msg: "No hay Ingredientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};

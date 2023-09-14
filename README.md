@@ -22,18 +22,18 @@ API Hamburguesería
 16. Contar cuántos chefs hay en la base de datos ✅
 17. Encontrar todas las categorías que contienen la palabra “gourmet” en su descripción ✅
 18. Eliminar las hamburguesas que contienen menos de 5 ingredientes ✅
-19. Agregar un nuevo chef a la colección con una especialidad en “Cocina Asiática”
-20. Listar las hamburguesas en orden ascendente según su precio
-21. Encontrar todos los ingredientes cuyo precio sea entre $2 y $5
-22. Actualizar la descripción del “Pan” a “Pan fresco y crujiente”
-23. Encontrar todas las hamburguesas que contienen “Tomate” o “Lechuga” como ingredientes
-24. Listar todos los chefs excepto “ChefA”
-25. Incrementar en $2 el precio de todas las hamburguesas de la categoría “Gourmet”
-26. Listar todos los ingredientes en orden alfabético
-27. Encontrar la hamburguesa más cara
-28. Agregar “Pepinillos” a todas las hamburguesas de la categoría “Clásica”
-29. Eliminar todos los chefs que tienen una especialidad en “Cocina Vegetariana”
-30. Encontrar todas las hamburguesas que contienen exactamente 7 ingredientes
+19. Agregar un nuevo chef a la colección con una especialidad en “Cocina Asiática” ✅
+20. Listar las hamburguesas en orden ascendente según su precio ✅
+21. Encontrar todos los ingredientes cuyo precio sea entre $2 y $5 ✅
+22. Actualizar la descripción del “Pan” a “Pan fresco y crujiente” ✅
+23. Encontrar todas las hamburguesas que contienen “Tomate” o “Lechuga” como ingredientes ✅
+24. Listar todos los chefs excepto “ChefA” ✅
+25. Incrementar en $2 el precio de todas las hamburguesas de la categoría “Gourmet” ✅
+26. Listar todos los ingredientes en orden alfabético ✅
+27. Encontrar la hamburguesa más cara ✅
+28. Agregar “Pepinillos” a todas las hamburguesas de la categoría “Clásica” ✅
+29. Eliminar todos los chefs que tienen una especialidad en “Cocina Vegetariana” ✅
+30. Encontrar todas las hamburguesas que contienen exactamente 7 ingredientes ✅
 31. Encontrar la hamburguesa más cara que fue preparada por un chef especializado en “Gourmet”
 32. Listar todos los ingredientes junto con el número de hamburguesas que los contienen
 33. Listar los chefs junto con el número de hamburguesas que han preparado
