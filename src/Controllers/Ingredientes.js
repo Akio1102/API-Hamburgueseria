@@ -60,3 +60,41 @@ export const GetIngredienteClasico = async (req, res) => {
     sendErrorResponse(res, error);
   }
 };
+
+export const GetIngredientePrecio = async (req, res) => {
+  try {
+    const Precio = await IngredientesService.getIngredientePrecio();
+    sendSuccessResponse(res, Precio);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const UpdateOnePan = async (req, res) => {
+  try {
+    const Pan = await IngredientesService.updateOnePan();
+    sendSuccessResponse(res, Pan);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const GetAllIngredienteAlfabetico = async (req, res) => {
+  try {
+    const IngredientesAlfa =
+      await IngredientesService.getAllIngredienteAlfabetico();
+    sendSuccessResponse(res, IngredientesAlfa);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const GetAllIngredientesNinHamburguesa = async (req, res) => {
+  try {
+    const IngredientesNin =
+      await IngredientesService.getAllIngredientesNinHamburguesa();
+    sendSuccessResponse(res, IngredientesNin);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};

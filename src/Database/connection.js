@@ -3,10 +3,7 @@ import { MONGO_URL } from "../Config/config.js";
 
 export default async function () {
   try {
-    const client = new MongoClient(MONGO_URL.MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const client = new MongoClient(MONGO_URL.MONGO_URL);
 
     await client.connect();
 

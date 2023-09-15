@@ -97,7 +97,7 @@ export const getAllChefsA = async () => {
 
     return AllChefs.length > 0
       ? {
-          msg: `Chefs Encontrados Excepto "ChefA"`,
+          msg: `Chefs Encontrados Excepto ChefA`,
           data: AllChefs,
         }
       : {

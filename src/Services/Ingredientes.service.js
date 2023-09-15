@@ -49,10 +49,9 @@ export const deleteAllStock0 = async () => {
     const collection = db.collection("Ingredientes");
     const deleteIngretientes = await collection.deleteMany({ stock: 0 });
 
-    return deleteIngretientes.length > 0
+    return deleteIngretientes.deletedCount > 0
       ? {
           msg: "Eliminados Ingredientes con Stock 0",
-          data: deleteIngretientes,
         }
       : {
           msg: "No hay Ingredientes",
@@ -193,6 +192,31 @@ export const getAllIngredienteAlfabetico = async () => {
         }
       : {
           msg: "No hay Ingredientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllIngredientesNinHamburguesa = async () => {
+  try {
+    const db = await ConectDB();
+    const Ingredientes = db.collection("Ingredientes");
+    const Hamburguesas = db.collection("Hamburguesas");
+
+    const NINHamburguesas = await Hamburguesas.distinct("ingredientes");
+    const Result = await Ingredientes.find({
+      nombre: { $nin: NINHamburguesas },
+    }).toArray();
+
+    return Result.length > 0
+      ? {
+          msg: "Los Ingrediente que no estan en Hambusquesas son los Siguientes",
+          data: Result,
+        }
+      : {
+          msg: "No hay Ingredientes que no esten en Hambusquesas",
           status: 404,
         };
   } catch (error) {

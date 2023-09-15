@@ -147,16 +147,11 @@ db.Categorias.find({ descripcion: { $regex: /gourmet/i } });
 db.Hamburguesas.find({});
 
 db.Hamburguesas.insertOne({
-  nombre: "test",
-  categoria: "test",
-  ingredientes: [
-    "Pan integral",
-    "Hamburguesa de lentejas",
-    "Queso suizo",
-    "Espinacas",
-  ],
-  precio: 8,
-  chef: "ChefB",
+  nombre: "Simple",
+  categoria: "Clásica",
+  ingredientes: ["Pan", "Carne de res", "Queso cheddar"],
+  precio: 10,
+  chef: "ChefA",
 });
 
 db.Hamburguesas.deleteMany({
@@ -190,3 +185,113 @@ db.Hamburguesas.updateMany({ categoria: "Gourmet" }, { $inc: { precio: 2 } });
 db.Ingredientes.find().sort({ nombre: 1 });
 
 db.Hamburguesas.find({ ingredientes: { $size: 7 } });
+
+db.Hamburguesas.find();
+
+db.Hamburguesas.find({ categoria: "Gourmet" }).sort({ precio: -1 }).limit(1);
+
+db.Hamburguesas.aggregate([
+  {
+    $unwind: "$ingredientes",
+  },
+  {
+    $group: {
+      _id: "$ingredientes",
+      totalHamburguesas: { $sum: 1 },
+    },
+  },
+  {
+    $sort: { totalHamburguesas: -1 },
+  },
+]);
+
+db.Hamburguesas.aggregate([
+  {
+    $group: {
+      _id: "$chef",
+      Numero_Hamburguesas: { $sum: 1 },
+    },
+  },
+  {
+    $sort: { Numero_Hamburguesas: -1 },
+  },
+]);
+
+db.Hamburguesas.aggregate([
+  {
+    $group: {
+      _id: "$categoria",
+      Cantidad: { $sum: 1 },
+    },
+  },
+  {
+    $sort: { Cantidad: -1 },
+  },
+  {
+    $limit: 1,
+  },
+]);
+
+db.Hamburguesas.aggregate([
+  { $unwind: "$ingredientes" },
+  {
+    $lookup: {
+      from: "Ingredientes",
+      localField: "ingredientes",
+      foreignField: "nombre",
+      as: "ingredientesData",
+    },
+  },
+  {
+    $group: {
+      _id: "$chef",
+      costoTotal: { $sum: { $sum: "$ingredientesData.precio" } },
+    },
+  },
+]);
+
+db.Ingredientes.insertOne({
+  nombre: "Chile",
+  descripcion: "Chile Mexicano",
+  precio: 10,
+  stock: 200,
+});
+
+db.Ingredientes.find({
+  nombre: { $nin: db.Hamburguesas.distinct("ingredientes") },
+});
+
+db.Hamburguesas.aggregate([
+  {
+    $lookup: {
+      from: "Categorias",
+      localField: "categoria",
+      foreignField: "nombre",
+      as: "categoriasData",
+    },
+  },
+]);
+
+db.Hamburguesas.aggregate([
+  { $unwind: "$ingredientes" },
+  { $group: { _id: "$chef", ingredientesCount: { $sum: 1 } } },
+  { $sort: { ingredientesCount: -1 } },
+  { $limit: 1 },
+]);
+
+db.Hamburguesas.aggregate([
+  { $group: { _id: "$categoria", precio: { $avg: "$precio" } } },
+]);
+
+db.Hamburguesas.aggregate([
+  { $group: { _id: "$chef", hamburguesaCara: { $max: "$precio" } } },
+  {
+    $lookup: {
+      from: "chefs",
+      localField: "_id",
+      foreignField: "nombre",
+      as: "chefData",
+    },
+  },
+  { $project: { _id: 0, "chefData.nombre": 1, hamburguesaCara: 1 } },
+]);

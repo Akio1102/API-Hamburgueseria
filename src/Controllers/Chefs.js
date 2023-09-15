@@ -32,3 +32,30 @@ export const GetCountChefs = async (req, res) => {
     sendErrorResponse(res, error);
   }
 };
+
+export const CreateChef = async (req, res) => {
+  try {
+    const CreateChef = await ChefsService.createChef();
+    sendSuccessResponse(res, CreateChef);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const GetAllChefsA = async (req, res) => {
+  try {
+    const AllChefsA = await ChefsService.getAllChefsA();
+    sendSuccessResponse(res, AllChefsA);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const DeleteChefsVeg = async (req, res) => {
+  try {
+    const ChefsVeg = await ChefsService.deleteAllChecfsVeg();
+    sendSuccessResponse(res, ChefsVeg);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
