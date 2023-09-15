@@ -1,0 +1,849 @@
+{
+	"info": {
+		"_postman_id": "703bed8d-0211-424f-82f7-493f1fa060c5",
+		"name": "Hamburgueseria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28761089"
+	},
+	"item": [
+		{
+			"name": "1-IngredientesStock400",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Stock-400",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Stock-400"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-HamburguesasVegetariana",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Vegetariana",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Vegetariana"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-ChefsCarnes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Chefs/Carnes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Chefs",
+						"Carnes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-IngrecientesPrecio1.5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-HamburguesasChefB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/ChefB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"ChefB"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-CategoriasDescripcion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7-IngredientesStock0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Stock-0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Stock-0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8-IngredienteHamburguesaClasica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/New-Ingrediente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"New-Ingrediente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9-HamburguesasPanIntegral",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Pan-Integral",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Pan-Integral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10-ChefC-CocinaInternacional",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Chefs/ChefC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Chefs",
+						"ChefC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11-IngredienteCaro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Caro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Caro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12-HamburguesasQuesoCheddar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Sin-Cheddar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Sin-Cheddar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13-StockPan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Stock-100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Stock-100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14-ingredientesClasico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Clasico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Clasico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15-HamburguesasPrecio9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Precio-Menor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Precio-Menor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16-CountChefs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Chefs/Count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Chefs",
+						"Count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17-CategoriasGourmet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Categorias/Gourmet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Categorias",
+						"Gourmet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18-Hamburguesas5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Ingredientes5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Ingredientes5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19-ChefCocinaAsiatica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Chefs/CreateChef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Chefs",
+						"CreateChef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20-HamburguesasAsc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Precio-Asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Precio-Asc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21-Ingredientes2-5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Precio-2-5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Precio-2-5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22-DescripcionPan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/UpdatePan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"UpdatePan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23-HamburguesasTomate-Lechuga",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Tomate-Lechuga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Tomate-Lechuga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24-ChefsA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Chefs/ChefsA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Chefs",
+						"ChefsA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "25-HamburguesasCategoriaGourmet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Precio-Gourmet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Precio-Gourmet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26-IngredientesAsc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/Asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"Asc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "27-HamburguesaCara",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Cara",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Cara"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "28-PepinillosClasica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Clasica",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Clasica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "29-ChefCocinaVegetariana",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Chefs/Chef-Vegano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Chefs",
+						"Chef-Vegano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "30-Hamburguesas7",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Ingredientes7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Ingredientes7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "31-HamburguesaCaraGourmet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Cara-Gourmet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Cara-Gourmet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "32-HamburguesasIngredientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Ingredientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Ingredientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "33-ChefsHamburguesas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Total",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Total"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "34-CategoriaHamburguesas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Categoria-Cantidad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Categoria-Cantidad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "35-CostoTotal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Costo-Total",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Costo-Total"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "36-IngredientesSinHamburguesa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Ingredientes/No-Hambusquesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Ingredientes",
+						"No-Hambusquesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "37-HamburguesasDescripcion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Descripcion-Categoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Descripcion-Categoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "38-ChefNumeroIngredientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Max",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Max"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "39-PrecioPromedioHamburguesas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Precio-Promedio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Precio-Promedio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "40-ChefsHamburguesasCaras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/Hamburguesa/Chefs-Cara",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"Hamburguesa",
+						"Chefs-Cara"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
